@@ -1,7 +1,3 @@
-import React from 'react'
+//import React from 'react';
 
-export const LoginScreen = () => {
-  return (
-    <div>LoginScreen</div>
-  )
-}
+export const LoginScreen = () => {};

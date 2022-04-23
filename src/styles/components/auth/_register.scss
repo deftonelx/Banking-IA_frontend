@@ -1,0 +1,46 @@
+@use '../../base/mixins' as m;
+
+.register {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../../public/assets/auth/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  &__grid {
+    align-items: center;
+    display: flex;
+    height: 90%;
+    justify-content: center;
+
+    @include m.phone {
+      align-items: center;
+      display: grid;
+      gap: 10rem;
+      grid-template-columns: repeat(2, 1fr);
+      height: 90%;
+      justify-content: center;
+    }
+  }
+}
+
+.register__card {
+  display: none;
+
+  @include m.phone {
+    display: block;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  & h2 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+
+  & img {
+    width: 70%;
+  }
+}
