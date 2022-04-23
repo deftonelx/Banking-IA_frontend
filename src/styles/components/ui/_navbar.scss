@@ -1,0 +1,123 @@
+@use '../../base/mixins' as m;
+
+.navbar {
+  display: grid;
+  background-color: #8fbe3c;
+  grid-template-columns: repeat(2, 50%);
+  overflow: hidden;
+  justify-items: center;
+  align-items: center;
+
+  @include m.phone {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: 0.5rem;
+    padding-inline: 2rem;
+  }
+}
+
+.navbar__logo {
+  & img {
+    width: 4rem;
+  }
+}
+
+.navbar__links {
+  display: block;
+  flex-direction: column;
+
+  @include m.phone {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+}
+
+.navbar__phone {
+  height: 0.5rem;
+  transition: all 0.5s ease;
+
+  & .navbar__bur {
+    display: none;
+  }
+
+  @include m.phone {
+    display: none;
+  }
+}
+
+.navbar__phone--active {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / 3;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  height: 10rem;
+
+  & .navbar__bur {
+    display: block;
+  }
+
+  @include m.phone {
+    display: none;
+  }
+}
+
+.navbar__bur {
+  color: rgb(233, 231, 231);
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #fff;
+  }
+
+  @include m.phone {
+    display: flex;
+  }
+}
+
+.navbar__link {
+  display: none;
+  color: rgb(233, 231, 231);
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #fff;
+  }
+
+  @include m.phone {
+    display: flex;
+  }
+}
+
+.navbar__button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  display: block;
+
+  & i {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  @include m.phone {
+    display: none;
+  }
+}
+
+.navbar__link-active {
+  color: #fff;
+  font-weight: 700;
+}
